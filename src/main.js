@@ -1,18 +1,18 @@
 import './style.css'
 
 const images = [
-  "/images/photo_1.jpg",
-  "/images/photo_2.jpg",
-  "/images/photo_3.jpg",
-  "/images/photo_4.jpg",
-  "/images/photo_5.jpg",
-  "/images/photo_6.jpg",
-  "/images/photo_7.jpg",
-  "/images/photo_8.jpg",
-  "/images/photo_9.jpg",
-  "/images/photo_10.jpg",
-  "/images/photo_11.jpg",
-  "/images/photo_12.jpg",
+  "/photo-site/images/photo_1.jpg",
+  "/photo-site/images/photo_2.jpg",
+  "/photo-site/images/photo_3.jpg",
+  "/photo-site/images/photo_4.jpg",
+  "/photo-site/images/photo_5.jpg",
+  "/photo-site/images/photo_6.jpg",
+  "/photo-site/images/photo_7.jpg",
+  "/photo-site/images/photo_8.jpg",
+  "/photo-site/images/photo_9.jpg",
+  "/photo-site/images/photo_10.jpg",
+  "/photo-site/images/photo_11.jpg",
+  "/photo-site/images/photo_12.jpg",
 ]
 
 let currentImage = null
