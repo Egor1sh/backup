@@ -1,48 +1,31 @@
 import './style.css'
-import { supabase } from './supabase'
 
-const app = document.querySelector('#app')
+const images = [
+  '/public/images/photo_1.jpg',
+  '/public/images/photo_2.jpg',
+  '/public/images/photo_3.jpg',
+  '/public/images/photo_4.jpg',
+  '/public/images/photo_5.jpg',
+  '/public/images/photo_6.jpg',
+  '/public/images/photo_7.jpg',
+  '/public/images/photo_8.jpg',
+  '/public/images/photo_9.jpg',
+  '/public/images/photo_10.jpg',
+  '/public/images/photo_11.jpg',
+  '/public/images/photo_12.jpg',
+  '/public/images/photo_13.jpg',
+  '/public/images/photo_14.jpg',
+  '/public/images/photo_15.jpg'
+]
 
-app.innerHTML = `
+document.querySelector('#app').innerHTML = `
   <div class="container">
-    <h1>📸 Upload Gallery</h1>
+    <h1>📸 Моя фотогалерея</h1>
 
-    <input type="file" id="fileInput" />
-    <button id="uploadBtn">Upload</button>
-
-    <div class="grid" id="grid"></div>
+    <div class="grid">
+      ${images.map(img => `
+        <img src="${img}" class="photo"/>
+      `).join('')}
+    </div>
   </div>
 `
-
-const fileInput = document.querySelector('#fileInput')
-const uploadBtn = document.querySelector('#uploadBtn')
-const grid = document.querySelector('#grid')
-
-uploadBtn.onclick = async () => {
-  const file = fileInput.files[0]
-  if (!file) return
-
-  const fileName = `${Date.now()}-${file.name}`
-
-  // 1. upload в Supabase
-  const { error } = await supabase.storage
-    .from('photos')
-    .upload(fileName, file)
-
-  if (error) {
-    console.log(error)
-    return
-  }
-
-  // 2. получить публичный URL
-  const { data } = supabase.storage
-    .from('photos')
-    .getPublicUrl(fileName)
-
-  // 3. показать фото
-  const img = document.createElement('img')
-  img.src = data.publicUrl
-  img.className = 'photo'
-
-  grid.appendChild(img)
-}
