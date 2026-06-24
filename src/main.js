@@ -20,7 +20,7 @@ const images = [
 
 document.querySelector('#app').innerHTML = `
   <div class="container">
-    <h1>📸 Моя фотогалерея</h1>
+    <h1>📸 9А класс</h1>
 
     <div class="grid">
       ${images.map(img => `
