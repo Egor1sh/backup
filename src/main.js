@@ -1,21 +1,21 @@
 import './style.css'
 
 const images = [
-  '/public/images/photo_1.jpg',
-  '/public/images/photo_2.jpg',
-  '/public/images/photo_3.jpg',
-  '/public/images/photo_4.jpg',
-  '/public/images/photo_5.jpg',
-  '/public/images/photo_6.jpg',
-  '/public/images/photo_7.jpg',
-  '/public/images/photo_8.jpg',
-  '/public/images/photo_9.jpg',
-  '/public/images/photo_10.jpg',
-  '/public/images/photo_11.jpg',
-  '/public/images/photo_12.jpg',
-  '/public/images/photo_13.jpg',
-  '/public/images/photo_14.jpg',
-  '/public/images/photo_15.jpg'
+  '/images/photo_1.jpg',
+  '/images/photo_2.jpg',
+  '/images/photo_3.jpg',
+  '/images/photo_4.jpg',
+  '/images/photo_5.jpg',
+  '/images/photo_6.jpg',
+  '/images/photo_7.jpg',
+  '/images/photo_8.jpg',
+  '/images/photo_9.jpg',
+  '/images/photo_10.jpg',
+  '/images/photo_11.jpg',
+  '/images/photo_12.jpg',
+  '/images/photo_13.jpg',
+  '/images/photo_14.jpg',
+  '/images/photo_15.jpg'
 ]
 
 document.querySelector('#app').innerHTML = `
