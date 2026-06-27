@@ -2,30 +2,20 @@ import './style.css'
 
 const base = import.meta.env.BASE_URL
 
-const images = [
-  base + 'images/photo_1.jpg',
-  base + 'images/photo_2.jpg',
-  base + 'images/photo_3.jpg',
-  base + 'images/photo_4.jpg',
-  base + 'images/photo_5.jpg',
-  base + 'images/photo_6.jpg',
-  base + 'images/photo_7.jpg',
-  base + 'images/photo_8.jpg',
-  base + 'images/photo_9.jpg',
-  base + 'images/photo_10.jpg',
-  base + 'images/photo_11.jpg',
-  base + 'images/photo_12.jpg',
-  base + 'images/photo_13.jpg',
-  base + 'images/photo_14.jpg',
-  base + 'images/photo_15.jpg',
-]
+// 👉 структура учеников
+const students = {
+  ivan: ['photo_1.jpg', 'photo_2.jpg'],
+  anya: ['photo_3.jpg'],
+  dima: ['photo_4.jpg', 'photo_5.jpg']
+}
+
+// --------------------
+// LIGHTBOX (fullscreen)
+// --------------------
 const lightbox = document.createElement('div')
 lightbox.style.cssText = `
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0,0,0,0.9);
   display: none;
   align-items: center;
@@ -33,15 +23,17 @@ lightbox.style.cssText = `
   z-index: 9999;
 `
 
+const lightboxImg = document.createElement('img')
+lightboxImg.style.cssText = `
+  max-width: 90%;
+  max-height: 90%;
+`
+
+lightbox.appendChild(lightboxImg)
 document.body.appendChild(lightbox)
 
-const img = document.createElement('img')
-img.style.maxWidth = '90%'
-img.style.maxHeight = '90%'
-lightbox.appendChild(img)
-
 window.openLightbox = (src) => {
-  img.src = src
+  lightboxImg.src = src
   lightbox.style.display = 'flex'
 }
 
@@ -49,14 +41,59 @@ lightbox.onclick = () => {
   lightbox.style.display = 'none'
 }
 
-document.querySelector('#app').innerHTML = `
-  <div class="container">
-    <h1>📸 9А класс</h1>
+// --------------------
+// RENDER STUDENTS LIST
+// --------------------
+function renderStudents() {
+  return `
+    <div class="container">
+      <h1>📸 9A класс</h1>
 
-    <div class="grid">
-      ${images.map(src => `
-        <img src="${src}" class="photo" onclick="openLightbox('${src}')"/>
-  `   ).join('')}
+      <div class="grid">
+        ${Object.keys(students).map(name => `
+          <div class="card" onclick="openStudent('${name}')">
+            <h3>${name}</h3>
+            <p>${students[name].length} фото</p>
+          </div>
+        `).join('')}
+      </div>
     </div>
-  </div>
-`
+  `
+}
+
+// --------------------
+// RENDER STUDENT GALLERY
+// --------------------
+function renderStudent(name) {
+  return `
+    <div class="container">
+      <button onclick="goBack()">← Назад</button>
+      <h2>${name}</h2>
+
+      <div class="grid">
+        ${students[name].map(img => {
+          const full = base + 'images/' + img
+          return `
+            <img src="${full}" class="photo" onclick="openLightbox('${full}')"/>
+          `
+        }).join('')}
+      </div>
+    </div>
+  `
+}
+
+// --------------------
+// NAVIGATION
+// --------------------
+window.openStudent = (name) => {
+  document.querySelector('#app').innerHTML = renderStudent(name)
+}
+
+window.goBack = () => {
+  document.querySelector('#app').innerHTML = renderStudents()
+}
+
+// --------------------
+// INIT
+// --------------------
+document.querySelector('#app').innerHTML = renderStudents()
