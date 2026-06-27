@@ -1,0 +1,22 @@
+(function(){let e=document.createElement(`link`).relList;if(e&&e.supports&&e.supports(`modulepreload`))return;for(let e of document.querySelectorAll(`link[rel="modulepreload"]`))n(e);new MutationObserver(e=>{for(let t of e)if(t.type===`childList`)for(let e of t.addedNodes)e.tagName===`LINK`&&e.rel===`modulepreload`&&n(e)}).observe(document,{childList:!0,subtree:!0});function t(e){let t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin===`use-credentials`?t.credentials=`include`:e.crossOrigin===`anonymous`?t.credentials=`omit`:t.credentials=`same-origin`,t}function n(e){if(e.ep)return;e.ep=!0;let n=t(e);fetch(e.href,n)}})();var e=[`/backup/images/photo_1.jpg`,`/backup/images/photo_2.jpg`,`/backup/images/photo_3.jpg`,`/backup/images/photo_4.jpg`,`/backup/images/photo_5.jpg`,`/backup/images/photo_6.jpg`,`/backup/images/photo_7.jpg`,`/backup/images/photo_8.jpg`,`/backup/images/photo_9.jpg`,`/backup/images/photo_10.jpg`,`/backup/images/photo_11.jpg`,`/backup/images/photo_12.jpg`,`/backup/images/photo_13.jpg`,`/backup/images/photo_14.jpg`,`/backup/images/photo_15.jpg`],t=document.createElement(`div`);t.style.cssText=`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+`,document.body.appendChild(t);var n=document.createElement(`img`);n.style.maxWidth=`90%`,n.style.maxHeight=`90%`,t.appendChild(n),window.openLightbox=e=>{n.src=e,t.style.display=`flex`},t.onclick=()=>{t.style.display=`none`},document.querySelector(`#app`).innerHTML=`
+  <div class="container">
+    <h1>📸 9А класс</h1>
+
+    <div class="grid">
+      ${e.map(e=>`
+        <img src="${e}" class="photo" onclick="openLightbox('${e}')"/>
+  `).join(``)}
+    </div>
+  </div>
+`;
