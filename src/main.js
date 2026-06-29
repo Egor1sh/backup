@@ -11,7 +11,7 @@ const students = [
   { id: "5", name: "Воронова Полина", folder: "05_Воронова_Полина", photos: [] },
   { id: "6", name: "Гайсенова Эвелина", folder: "06_Гайсенова_Эвелина", photos: [] },
   { id: "7", name: "Говорков Алексей", folder: "07_Говорков_Алексей", photos: [] },
-  { id: "8", name: "Головко Дарья", folder: "08_Головко_Дарья", photos: ["Обложка.jpg","1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg","11.jpg","12.jpg","13.jpg","14.jpg","15.jpg","16.jpg","17.jpg","18.jpg","19.jpg","20.jpg","21.jpg","22.jpg","23.jpg","24.jpg","25.jpg"] },
+  { id: "8", name: "Головко Дарья", folder: "08_Головко_Дарья", photos: ["Обложка.jpg","1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg","11.jpg","12.jpg","13.jpg","14.jpg","15.jpg","16.jpg","17.jpg","18.jpg","19.jpg","20.jpg","21.jpg","22.jpg","23.jpg","24.jpg"] },
   { id: "9", name: "Демиденко Даша", folder: "09_Демиденко_Даша", photos: [] },
   { id: "10", name: "Добрая Соня", folder: "10_Добрая_Соня", photos: [] },
 
@@ -43,7 +43,7 @@ const students = [
   { id: "34", name: "Слобожанина Екатерина", folder: "34_Слобожанина_Екатерина", photos: [] },
   { id: "35", name: "Тельпис Анна", folder: "35_Тельпис_Анна", photos: [] },
   { id: "36", name: "Токмакова Лилия", folder: "36_Токмакова_Лилия", photos: [] },
-  { id: "37", name: "Торчило Влад", folder: "37_Торчило_Влад", photos: ["Обложка.jpg","1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg","11.jpg","12.jpg","13.jpg","14.jpg","15.jpg","16.jpg","17.jpg","18.jpg","19.jpg","20.jpg","21.jpg","22.jpg","23.jpg","24.jpg","25.jpg"] },
+  { id: "37", name: "Торчило Влад", folder: "37_Торчило_Влад", photos: ["Обложка.jpg","1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg","11.jpg","12.jpg","13.jpg","14.jpg","15.jpg","16.jpg","17.jpg","18.jpg","19.jpg","20.jpg","21.jpg","22.jpg","23.jpg","24.jpg",] },
   { id: "38", name: "Шахов Тимур", folder: "38_Шахов_Тимур", photos: [] },
   { id: "39", name: "Юнина Алиса", folder: "39_Юнина_Алиса", photos: [] },
   { id: "40", name: "Эйленен Лиза", folder: "40_Эйленен_Лиза", photos: [] }
