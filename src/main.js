@@ -91,6 +91,12 @@ function renderStudents() {
       <div class="grid">
         ${students.map(student => `
           <div class="card" onclick="openStudent('${student.id}')">
+
+            <img 
+              src="${base}images/${student.folder}/${student.avatar}" 
+              class="avatar"
+            />
+
             <h2>${student.name}</h2>
             <p>${student.photos.length} фото</p>
 
@@ -121,11 +127,6 @@ function renderStudent(id) {
       <button class="back-btn" onclick="goBack()">← Назад</button>
 
       <h1>${student.name}</h1>
-
-      <img 
-        src="${base}images/${student.folder}/${student.avatar}" 
-        class="avatar-large"
-      />
 
       <div class="grid">
         ${student.photos.map(photo => {

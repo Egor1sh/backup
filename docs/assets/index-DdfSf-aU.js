@@ -14,10 +14,16 @@
       <h1>📸 9А класс</h1>
 
       <div class="grid">
-        ${t.map(e=>`
-          <div class="card" onclick="openStudent('${e.id}')">
-            <h2>${e.name}</h2>
-            <p>${e.photos.length} фото</p>
+        ${t.map(t=>`
+          <div class="card" onclick="openStudent('${t.id}')">
+
+            <img 
+              src="${e}images/${t.folder}/${t.avatar}" 
+              class="avatar"
+            />
+
+            <h2>${t.name}</h2>
+            <p>${t.photos.length} фото</p>
 
           </div>
         `).join(``)}
@@ -28,11 +34,6 @@
       <button class="back-btn" onclick="goBack()">← Назад</button>
 
       <h1>${r.name}</h1>
-
-      <img 
-        src="${e}images/${r.folder}/${r.avatar}" 
-        class="avatar-large"
-      />
 
       <div class="grid">
         ${r.photos.map(t=>{let n=`${e}images/${r.folder}/${t}`;return`
